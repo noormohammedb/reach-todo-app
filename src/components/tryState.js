@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Clicker from "./clicker";
 
-class Todo extends Component {
+class TryState extends Component {
    state = {
       clickCount: 0,
    };
@@ -14,7 +14,7 @@ class Todo extends Component {
    render() {
       return (
          <div className="ele">
-            <h4>Hello from todo component</h4>
+            <h4>Hello from TryState component</h4>
             <p className="props">{this.props.dataToComponents}</p>
             <button onClick={this.clickEventInButton}>Click Me</button>
 
@@ -25,4 +25,4 @@ class Todo extends Component {
    }
 }
 
-export default Todo;
+export default TryState;

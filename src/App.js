@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
-import CustomForm from "./components/form";
-import List from "./components/list";
-// import Todo from "./components/todo";
+// import CustomForm from "./components/form";
+// import List from "./components/list";
+// import TryState from "./components/tryState";
+import Todo from "./Todo";
 
 class App extends Component {
    state = {
@@ -16,10 +17,11 @@ class App extends Component {
             {/* <div className="App">
                <h1 className="App-header">Hello World</h1>
                <p className="App-link">{this.state.fromState}</p>
-               <Todo dataToComponents={this.state.dTocomp} />
-            </div> */}
+            </div>
+            <TryState dataToComponents={this.state.dTocomp} />
             <CustomForm />
-            <List />
+            <List /> */}
+            <Todo />
          </React.Fragment>
       );
    }
