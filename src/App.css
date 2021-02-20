@@ -1,3 +1,26 @@
+* {
+   background-color: #373737;
+}
+
+html {
+   background-color: #191b1c;
+   color: #e2dfd9;
+}
+
+body div {
+   /* background-color: #191b1c; */
+   color: #e2dfd9;
+}
+
+input,
+textarea,
+button {
+   margin: 0.3rem;
+   background-color: #352e0d;
+
+   color: #e2fff9;
+}
+
 .App {
    text-align: center;
 }

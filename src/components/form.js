@@ -19,10 +19,13 @@ class CustomForm extends Component {
       });
    };
 
+   componentDidMount() {
+      // alert("Hello");
+   }
    onButtonAction = (event) => {
       event.preventDefault();
-      // console.log(this.state.firstName);
-      // console.log(this.state.lastName);
+      console.log(this.state.firstName);
+      console.log(this.state.lastName);
       console.log(this.inps1.value);
       console.log(this.inps2.value);
    };

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import CustomForm from "./components/form";
+import List from "./components/list";
 // import Todo from "./components/todo";
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
                <Todo dataToComponents={this.state.dTocomp} />
             </div> */}
             <CustomForm />
+            <List />
          </React.Fragment>
       );
    }
