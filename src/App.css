@@ -101,13 +101,17 @@ ul li {
    color: #e2dfd9;
 }
 
+.todo-icons {
+   margin: 2px 5px;
+}
+
 .cross-icon {
    height: 30px;
    width: 30px;
    border: 1px solid #674604a2;
    background-color: #1a21f758;
    border-radius: 80px;
+   margin-left: 5px;
    padding: 2px;
-   margin: 2px 10px;
    cursor: pointer;
 }

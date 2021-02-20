@@ -5,7 +5,7 @@ class Todo extends Component {
       todoData: [],
    };
    editEvent = (possition) => {
-      console.log("edit clicked");
+      // console.log("edit clicked");
       const editedData = prompt("Edit ", this.state.todoData[possition]);
       const todoData = this.state.todoData;
       todoData[possition] = editedData;
@@ -16,8 +16,8 @@ class Todo extends Component {
    };
 
    removeEvent = (possition) => {
-      console.log("event clicked");
-      console.log(possition);
+      // console.log("event clicked");
+      // console.log(possition);
       this.setState({
          todoData: this.state.todoData.filter(
             (data, index) => index !== possition
@@ -27,7 +27,6 @@ class Todo extends Component {
 
    addEvent = (event) => {
       event.preventDefault();
-      console.log(event.target.previousSibling.value);
       this.setState({
          todoData: [...this.state.todoData, event.target.previousSibling.value],
       });
@@ -51,7 +50,7 @@ class Todo extends Component {
                </form>
                <div className="todo-containe">
                   <ul className="todo-list">
-                     <li className="ch-to">
+                     {/* <li className="ch-to">
                         <p className="todo-content">{}blabal</p>
                         <img
                            src="https://www.flaticon.com/premium-icon/icons/svg/2767/2767185.svg"
@@ -71,26 +70,28 @@ class Todo extends Component {
                            alt=""
                            className="cross-icon"
                         />
-                     </li>
+                     </li> */}
                      {this.state.todoData.map((data, index) => (
                         <li key={index} className="ch-to">
                            <p className="todo-content">{data}</p>
-                           <img
-                              src="https://www.flaticon.com/premium-icon/icons/svg/2767/2767185.svg"
-                              alt=""
-                              className="cross-icon"
-                              onClick={() => {
-                                 this.editEvent(index);
-                              }}
-                           />
-                           <img
-                              src="https://www.flaticon.com/premium-icon/icons/svg/2920/2920658.svg"
-                              alt=""
-                              className="cross-icon"
-                              onClick={() => {
-                                 this.removeEvent(index);
-                              }}
-                           />
+                           <div className="todo-icons">
+                              <img
+                                 src="https://www.flaticon.com/premium-icon/icons/svg/2767/2767185.svg"
+                                 alt=""
+                                 className="cross-icon"
+                                 onClick={() => {
+                                    this.editEvent(index);
+                                 }}
+                              />
+                              <img
+                                 src="https://www.flaticon.com/premium-icon/icons/svg/2920/2920658.svg"
+                                 alt=""
+                                 className="cross-icon"
+                                 onClick={() => {
+                                    this.removeEvent(index);
+                                 }}
+                              />
+                           </div>
                         </li>
                      ))}
                   </ul>
