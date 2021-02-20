@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Clicker from "./clicker";
 
 class Todo extends Component {
    state = {
@@ -18,6 +19,7 @@ class Todo extends Component {
             <button onClick={this.clickEventInButton}>Click Me</button>
 
             <p> {this.state.clickCount}</p>
+            <Clicker count={this.state.clickCount} />
          </div>
       );
    }
