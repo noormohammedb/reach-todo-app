@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 
 class CustomForm extends Component {
-   state = {
-      firstName: "",
-      lastName: "",
-   };
+   constructor(props) {
+      super(props);
+
+      this.state = {
+         firstName: "",
+         lastName: "",
+      };
+
+      this.inps1 = React.createRef();
+      this.inps2 = React.createRef();
+   }
    changeInpVal = (event) => {
-      // console.log(event.target.value);
+      console.log(event.target.value);
       this.setState({
          [event.target.name]: event.target.value,
       });
@@ -14,8 +21,10 @@ class CustomForm extends Component {
 
    onButtonAction = (event) => {
       event.preventDefault();
-      console.log(this.state.firstName);
-      console.log(this.state.lastName);
+      // console.log(this.state.firstName);
+      // console.log(this.state.lastName);
+      console.log(this.inps1.value);
+      console.log(this.inps2.value);
    };
 
    render() {
@@ -28,16 +37,18 @@ class CustomForm extends Component {
                   type="text"
                   id="firstName"
                   name="firstName"
-                  onChange={this.changeInpVal}
-                  value={this.state.firstName}
+                  ref={(inputs) => (this.inps1 = inputs)}
+                  // onChange={this.changeInpVal}
+                  // value={this.state.firstName}
                />
                <label htmlFor="lastName">Last Name : </label>
                <input
                   type="text"
                   id="lastName"
                   name="lastName"
-                  onChange={this.changeInpVal}
-                  value={this.state.lastName}
+                  ref={(inputs) => (this.inps2 = inputs)}
+                  // onChange={this.changeInpVal}
+                  // value={this.state.lastName}
                />
                <button onClick={this.onButtonAction}>click me</button>
             </form>
