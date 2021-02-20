@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 class List extends Component {
    state = {
+      updated: 5,
       something: "some string",
       data: [
          {
@@ -17,10 +18,21 @@ class List extends Component {
 
    componentDidMount() {
       // alert("Hello");
-      console.log("component List");
+      console.log("component List mount");
    }
 
+   componentWillUnmount() {
+      console.log("byy byy");
+   }
+
+   updateMethod = (event) => {
+      this.setState({
+         updated: 8,
+      });
+   };
+
    render() {
+      console.log(this.state.updated);
       return (
          <React.Fragment>
             <h2> hello</h2>
@@ -33,6 +45,7 @@ class List extends Component {
                   ))}
                </ul>
             </div>
+            <button onClick={this.updateMethod}>Hit Me</button>
             <p>{this.state.something}</p>
          </React.Fragment>
       );
