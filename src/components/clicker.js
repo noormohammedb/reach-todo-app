@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ClickEvent from "./clickEvent";
 
 class Clicker extends Component {
    state = {
@@ -20,6 +21,7 @@ class Clicker extends Component {
             <button className="propsfun" onClick={this.changeProsFun}>
                ch props
             </button>
+            <ClickEvent />
          </div>
       );
    }
