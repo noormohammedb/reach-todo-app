@@ -1,6 +1,7 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import "./App.css";
-import Todo from "./components/todo";
+import CustomForm from "./components/form";
+// import Todo from "./components/todo";
 
 class App extends Component {
    state = {
@@ -10,11 +11,14 @@ class App extends Component {
 
    render() {
       return (
-         <div className="App">
-            <h1 className="App-header">Hello World</h1>
-            <p className="App-link">{this.state.fromState}</p>
-            <Todo dataToComponents={this.state.dTocomp} />
-         </div>
+         <React.Fragment>
+            {/* <div className="App">
+               <h1 className="App-header">Hello World</h1>
+               <p className="App-link">{this.state.fromState}</p>
+               <Todo dataToComponents={this.state.dTocomp} />
+            </div> */}
+            <CustomForm />
+         </React.Fragment>
       );
    }
 }
