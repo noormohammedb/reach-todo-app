@@ -4,6 +4,16 @@ class Todo extends Component {
    state = {
       todoData: [],
    };
+   editEvent = (possition) => {
+      console.log("edit clicked");
+      const editedData = prompt("Edit ", this.state.todoData[possition]);
+      const todoData = this.state.todoData;
+      todoData[possition] = editedData;
+      this.setState({
+         // todoData: [...(this.state.todoData[possition] = editedData)],
+         todoData,
+      });
+   };
 
    removeEvent = (possition) => {
       console.log("event clicked");
@@ -41,8 +51,13 @@ class Todo extends Component {
                </form>
                <div className="todo-containe">
                   <ul className="todo-list">
-                     {/* <li className="ch-to">
+                     <li className="ch-to">
                         <p className="todo-content">{}blabal</p>
+                        <img
+                           src="https://www.flaticon.com/premium-icon/icons/svg/2767/2767185.svg"
+                           alt=""
+                           className="cross-icon"
+                        />
                         <img
                            src="https://www.flaticon.com/premium-icon/icons/svg/2920/2920658.svg"
                            alt=""
@@ -56,10 +71,18 @@ class Todo extends Component {
                            alt=""
                            className="cross-icon"
                         />
-                     </li> */}
+                     </li>
                      {this.state.todoData.map((data, index) => (
                         <li key={index} className="ch-to">
                            <p className="todo-content">{data}</p>
+                           <img
+                              src="https://www.flaticon.com/premium-icon/icons/svg/2767/2767185.svg"
+                              alt=""
+                              className="cross-icon"
+                              onClick={() => {
+                                 this.editEvent(index);
+                              }}
+                           />
                            <img
                               src="https://www.flaticon.com/premium-icon/icons/svg/2920/2920658.svg"
                               alt=""
