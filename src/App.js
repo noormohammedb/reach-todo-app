@@ -4,6 +4,9 @@ import "./App.css";
 // import List from "./components/list";
 // import TryState from "./components/tryState";
 import Todo from "./Todo";
+import About from "./components/router/about";
+import Header from "./components/router/header";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
    state = {
@@ -13,16 +16,23 @@ class App extends Component {
 
    render() {
       return (
-         <React.Fragment>
+         <>
             {/* <div className="App">
                <h1 className="App-header">Hello World</h1>
                <p className="App-link">{this.state.fromState}</p>
             </div>
             <TryState dataToComponents={this.state.dTocomp} />
             <CustomForm />
-            <List /> */}
+            <About />
+            <Header />
             <Todo />
-         </React.Fragment>
+            <List /> */}
+            <Router>
+               <Header />
+               <Route path="/" exact component={Todo} />
+               <Route path="/about" component={About} />
+            </Router>
+         </>
       );
    }
 }
